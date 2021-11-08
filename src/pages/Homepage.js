@@ -5,7 +5,6 @@ import NavbarBootstrap from "../component/Navbar";
 function Homepage() {
   return (
     <div>
-      <NavbarBootstrap />
       <Banner />
     </div>
   );

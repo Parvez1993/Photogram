@@ -3,69 +3,102 @@ import { Col, Container, Image, Row, Button } from "react-bootstrap";
 import banner from "../images/banner.png";
 import styled from "styled-components";
 import blob from "../images/blog.svg";
+import { Link } from "react-router-dom";
 function Banner() {
   return (
-    <div>
-      <Wrapper>
-        <Container>
-          {" "}
+    <Wrapper>
+      <div className="banner">
+        <Container className="container">
           <Row>
             <Col
+              xl={6}
               lg={6}
               md={{ order: 2, span: 12 }}
               sm={{ order: 2, span: 12 }}
               xs={{ order: 2, span: 12 }}
             >
               <div className="image">
-                <Image src={banner} alt="bannerimage" width="80%" />
+                <img src={banner} alt="bannerimage" className="banner_image" />
               </div>
             </Col>
             <Col>
               <div className="text">
-                <div className="sub">Memories stored not deleted !!!</div>
-                <div className="heading">
-                  <h1>Click, Share and Spread Joy</h1>
+                <div className="sub">
+                  <p>Memories are stored not deleted !!!</p>
+                </div>
+                <div className="heading ">
+                  <h1 className="heading__text">Click, Share & Spread Joy</h1>
                 </div>
                 <div className="button">
-                  <Button variant="secondary" size="lg">
-                    Sign up
-                  </Button>
+                  <Link to="/signup">
+                    <Button variant="primary" size="lg">
+                      Sign up
+                    </Button>
+                  </Link>
                 </div>
-                <div className="blob">
-                  <img src={blob} alt="blob" />
+                <div>
+                  <img src={blob} alt="blob" className="blob" />
                 </div>
               </div>
             </Col>
           </Row>
         </Container>
-      </Wrapper>
-    </div>
+      </div>
+    </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  background: rgb(131, 58, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(255, 218, 218, 1) 50%,
-    rgba(67, 10, 200, 1) 100%
-  );
-  padding: 10% 0;
-  height: 90vh;
+  .banner {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(255, 218, 218, 1) 50%,
+      rgba(67, 10, 200, 1) 100%
+    );
+    height: 100vh;
+    padding: 100px 0;
+    @media screen and (min-width: 991.99px) and (max-width: 1920px) {
+      overflow-y: none;
+    }
+  }
+  .image {
+    width: 100%;
+    .banner_image {
+      width: 100%;
+      @media screen and (min-width: 500px) and (max-width: 991.99px) {
+        width: 55% !important;
+      }
+    }
+  }
   .text {
-    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
     row-gap: 20px;
+    z-index: 1;
+    position: relative;
+    font-size: 1rem !important;
+    padding: 20px;
+
+    @media screen and (max-width: 500.999px) {
+      .heading__text {
+        font-size: 200% !important;
+      }
+    }
+
     .sub {
-      color: white;
+      color: var(--darkpink);
+      font-weight: bold;
+      word-spacing: 1em;
     }
     .blob {
-      z-index: 1;
+      position: absolute;
+      z-index: -1;
       top: 0;
+      right: 0;
+      transform: translate(-20%, -20%);
     }
   }
 `;
