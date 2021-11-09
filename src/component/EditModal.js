@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useAuth } from "./Context";
 
@@ -6,14 +6,23 @@ function EditModal(props) {
   const { id } = props;
   const [newCaption, setNewCaption] = useState("");
   const { user, updateForm } = useAuth();
+  const [count, setCount] = useState(false);
 
   const handleEdit = async () => {
     try {
       await updateForm(id, newCaption);
+      setCount(true);
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (count) {
+      setCount(false);
+    }
+  }, [handleEdit]);
+
   return (
     <Modal
       {...props}

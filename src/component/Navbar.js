@@ -27,6 +27,20 @@ function NavbarBootstrap() {
                 Home
               </Link>
             </Nav.Link>
+            <Nav.Link className="my-2">
+              <Link to="/gallery" className="white">
+                Gallery
+              </Link>
+            </Nav.Link>
+            {user ? (
+              <Nav.Link className="my-2">
+                <Link to="/dashboard" className="white">
+                  Profile
+                </Link>
+              </Nav.Link>
+            ) : (
+              ""
+            )}
             <Nav.Link className="d-flex align-center">
               {user ? (
                 <Button variant="primary" size="lg" onClick={signOut}>
@@ -35,7 +49,7 @@ function NavbarBootstrap() {
               ) : (
                 <Link to="/signin">
                   <Button variant="primary" size="lg">
-                    Sign up
+                    Sign in
                   </Button>
                 </Link>
               )}

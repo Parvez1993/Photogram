@@ -27,7 +27,7 @@ function SinglePic() {
       let tempImg = images.filter((item) => item.id === slug);
       setSingleImg(tempImg[0]);
     }
-  }, [singleImg]);
+  }, [singleImg, modalShow]);
   const getTime = (time) => {
     var dateTime = new Date(time * 1000).toDateString().slice(0, 10);
     console.log(dateTime);
@@ -42,6 +42,7 @@ function SinglePic() {
       console.log(error);
     }
   };
+
   return (
     <>
       <Container>

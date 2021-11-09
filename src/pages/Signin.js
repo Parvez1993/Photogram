@@ -3,11 +3,11 @@ import { Container, Button, Form } from "react-bootstrap";
 import { Header, Icon, Image } from "semantic-ui-react";
 import styled from "styled-components";
 import { useAuth } from "../component/Context";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Signin() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const { login } = useAuth();
+  const { login, mesg, setMesg } = useAuth();
 
   const navigate = useNavigate();
   const handeSubmit = async (e) => {
@@ -15,7 +15,7 @@ function Signin() {
       await login(email, password);
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      return setMesg(error.message);
     }
   };
 
@@ -26,6 +26,7 @@ function Signin() {
           <Header as="h2" icon textAlign="center" className="header">
             <Icon name="sign-in" circular />
             <Header.Content>Sign In Mate !!!</Header.Content>
+            {mesg ? mesg : ""}
           </Header>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -61,6 +62,9 @@ function Signin() {
               </Button>
             </div>
           </Form>
+          <h3>
+            Do not have accout? <Link to="/signup">click here </Link>
+          </h3>
         </Wrapper>
       </Container>
     </>

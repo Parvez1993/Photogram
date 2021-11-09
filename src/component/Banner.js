@@ -18,10 +18,15 @@ function Banner() {
               xs={{ order: 2, span: 12 }}
             >
               <div className="image">
-                <img src={banner} alt="bannerimage" className="banner_image" />
+                <Image
+                  src={banner}
+                  alt="bannerimage"
+                  className="banner_image"
+                  fluid
+                />
               </div>
             </Col>
-            <Col>
+            <Col xl={6} lg={6}>
               <div className="text">
                 <div className="sub">
                   <p>Memories are stored not deleted !!!</p>
@@ -31,13 +36,10 @@ function Banner() {
                 </div>
                 <div className="button">
                   <Link to="/signup">
-                    <Button variant="primary" size="lg">
+                    <Button variant="primary" size="lg" className="px-5 py-2">
                       Sign up
                     </Button>
                   </Link>
-                </div>
-                <div>
-                  <img src={blob} alt="blob" className="blob" />
                 </div>
               </div>
             </Col>
@@ -50,17 +52,17 @@ function Banner() {
 
 const Wrapper = styled.div`
   .banner {
-    background: rgb(131, 58, 180);
-    background: linear-gradient(
-      90deg,
-      rgba(131, 58, 180, 1) 0%,
-      rgba(255, 218, 218, 1) 50%,
-      rgba(67, 10, 200, 1) 100%
+    background: rgb(133, 140, 175);
+    background: radial-gradient(
+      circle,
+      rgba(133, 140, 175, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
     );
-    height: 100vh;
+
     padding: 100px 0;
     @media screen and (min-width: 991.99px) and (max-width: 1920px) {
       overflow-y: none;
+      height: 100vh;
     }
   }
   .image {
@@ -79,9 +81,9 @@ const Wrapper = styled.div`
     row-gap: 20px;
     z-index: 1;
     position: relative;
-    font-size: 1rem !important;
+    font-size: 2rem !important;
     padding: 20px;
-
+    color: white;
     @media screen and (max-width: 500.999px) {
       .heading__text {
         font-size: 200% !important;
@@ -89,9 +91,10 @@ const Wrapper = styled.div`
     }
 
     .sub {
-      color: var(--darkpink);
+      color: var(--lightpink);
       font-weight: bold;
       word-spacing: 1em;
+      font-size: 2rem;
     }
     .blob {
       position: absolute;
