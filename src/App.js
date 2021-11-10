@@ -15,7 +15,7 @@ import Gallery from "./component/Gallery";
 function App() {
   const { user } = useAuth();
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <NavbarBootstrap />
       <Routes>
         <Route exact path="/" element={<Homepage />} />
