@@ -28,10 +28,10 @@ h1 {
   font-size: 3.4em !important;
 }
 
-.modal {
-  height: auto;
+.modal-dialog {
+  position: fixed;
   top: auto;
-  left: auto;
-  bottom: auto;
   right: auto;
+  left: auto;
+  bottom: 0;
 }
