@@ -10,13 +10,7 @@ function Banner() {
       <div className="banner">
         <Container className="container">
           <Row>
-            <Col
-              xl={6}
-              lg={6}
-              md={{ order: 2, span: 12 }}
-              sm={{ order: 2, span: 12 }}
-              xs={{ order: 2, span: 12 }}
-            >
+            <Col xl={6} lg={6}>
               <div className="image">
                 <Image
                   src={banner}
@@ -29,7 +23,7 @@ function Banner() {
             <Col xl={6} lg={6}>
               <div className="text">
                 <div className="sub">
-                  <p>Memories are saved not deleted !!!</p>
+                  <p>Memories are stored not deleted !!!</p>
                 </div>
                 <div className="heading ">
                   <h1 className="heading__text">Click, Share & Spread Joy</h1>
@@ -58,7 +52,7 @@ const Wrapper = styled.div`
       rgba(133, 140, 175, 1) 0%,
       rgba(0, 0, 0, 1) 100%
     );
-
+    height: 100vh;
     padding: 100px 0;
     @media screen and (min-width: 991.99px) and (max-width: 1920px) {
       overflow-y: none;
