@@ -29,7 +29,7 @@ function Banner() {
             <Col xl={6} lg={6}>
               <div className="text">
                 <div className="sub">
-                  <p>Memories are stored not deleted !!!</p>
+                  <p>Memories are saved not deleted !!!</p>
                 </div>
                 <div className="heading ">
                   <h1 className="heading__text">Click, Share & Spread Joy</h1>
