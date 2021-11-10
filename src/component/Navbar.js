@@ -20,7 +20,7 @@ function NavbarBootstrap() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Photogram</Navbar.Brand>
+          <Navbar.Brand href="/">Photogram</Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link className="my-2">
               <Link to="/" className="white">

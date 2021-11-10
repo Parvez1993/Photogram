@@ -62,11 +62,11 @@ const Wrapper = styled.div`
     padding: 100px 0;
     @media screen and (min-width: 991.99px) and (max-width: 1920px) {
       overflow-y: none;
-      height: 100vh;
     }
   }
   .image {
     width: 100%;
+    height: auto;
     .banner_image {
       width: 100%;
       @media screen and (min-width: 500px) and (max-width: 991.99px) {
@@ -81,7 +81,6 @@ const Wrapper = styled.div`
     row-gap: 20px;
     z-index: 1;
     position: relative;
-    font-size: 2rem !important;
     padding: 20px;
     color: white;
     @media screen and (max-width: 500.999px) {
